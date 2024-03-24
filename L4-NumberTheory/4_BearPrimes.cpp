@@ -66,11 +66,7 @@ void solve() {
 			csum[i] += a[j];
 		}
 	}
-	// for (int i = 2; i <= mx; ++i)
-	// {
-	// 	cout << csum[i] << " ";
-	// }
-	// cout << endl;
+
 	// queries
 	ll m, li, ri; cin >> m;
 	while (m--) {

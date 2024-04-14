@@ -38,7 +38,7 @@ vector<vector<int> > power(vector< vector<int> > &T, int n) {
 
 
 int solve(int n) {
-	if (n < k) {
+	if (n <= k) {
 		return ps[n - 1];
 	}
 
@@ -47,11 +47,11 @@ int solve(int n) {
 	// Create the first two rows
 	for (int i = 2; i <= k + 1; ++i)
 	{
-		T[1][i] = T[2][i] = c[i - 1];
+		T[1][i] = T[2][i] = c[i - 2];
 	}
 
 	int i = 3, j = 2;
-	while (i <= k + 1 and j <= k + 1) T[i++][j++] = 1;
+	while (i <= k + 1) T[i++][j++] = 1;
 
 	// 2. Find vector F1
 	F1.resize(k + 2);
@@ -83,7 +83,7 @@ int main() {
 			b.push_back(x);
 		}
 		// Creating the prefix sum array using b[i]
-		ps.resize(k + 1);
+		ps.resize(k);
 		ps[0] = b[0];
 		for (int i = 1; i < k; ++i)
 		{

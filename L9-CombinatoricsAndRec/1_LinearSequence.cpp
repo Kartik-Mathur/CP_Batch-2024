@@ -39,7 +39,7 @@ int nthFibo(int n) {
 		return initVal[n];
 	// 1. Transformation Matrix
 	// Create the transformation matrix
-	vector< vector<int> > T(k + 1, vector<int>(k + 1, 0));
+	vector< vector<int> > T(k + 2, vector<int>(k + 2, 0));
 	for (int i = 1; i <= k; ++i)
 	{
 		for (int j = 1; j <= k; ++j)
@@ -53,20 +53,22 @@ int nthFibo(int n) {
 			}
 		}
 	}
+	T[k][k + 1] = T[k + 1][k + 1] = 1;
 
 	// 2. Find vector F1
-	F1.resize(k + 1);
+	F1.resize(k + 2);
 	for (int i = 1; i <= k; ++i)
 	{
 		F1[i] = initVal[i - 1];
 	}
+	F1[k + 1] = constantVal;
 
 	// 3. Find T^(n-1)
 	T = power(T, n - 1);
 
 	// 4. Find answer
 	int ans = 0;
-	for (int i = 1; i <= k; ++i)
+	for (int i = 1; i <= k + 1; ++i)
 	{
 		ans += (T[1][i] % p * F1[i] % p) % p;
 	}

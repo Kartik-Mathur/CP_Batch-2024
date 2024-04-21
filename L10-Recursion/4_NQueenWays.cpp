@@ -39,7 +39,8 @@ void queenWays(int row, int n) {
 
 int main() {
 
-	int n; cin >> n;
+	int n = 5;
+	// int n; cin >> n;
 	queenWays(0, n);
 	cout << ans << endl;
 

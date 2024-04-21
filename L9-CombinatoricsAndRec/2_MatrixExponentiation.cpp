@@ -77,6 +77,8 @@ int solve(int n) {
 int main() {
 	int t; cin >> t; while (t--) {
 		cin >> k;
+		c.clear();
+		b.clear();
 		for (int i = 0; i < k; ++i)
 		{
 			int x; cin >> x;
@@ -97,7 +99,8 @@ int main() {
 		}
 		cin >> m >> n >> p;
 
-		cout << (solve(n) % p - solve(m - 1) % p) % p << endl;
+		cout << ((solve(n) % p - solve(m - 1) % p) + p) % p << endl;
+
 	}
 
 

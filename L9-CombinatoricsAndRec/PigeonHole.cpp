@@ -15,6 +15,8 @@ int main() {
 		ps[i] %= n;
 		freq[ps[i]]++;
 	}
+
+
 	freq[0]++; // To cater empty
 	// subarray
 	int ans = 0;

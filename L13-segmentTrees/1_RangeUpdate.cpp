@@ -7,11 +7,7 @@ public:
 	int n;
 	int *lazy;
 
-	segmentTree(int N) {
-		n = N;
-		lazy = new int[3 * N];
-		tree = new int[3 * N];
-	}
+	segmentTree(int N): n(N), tree(new int[3 * N] {0}), lazy(new int[3 * N] {0}) {}
 
 	void buildTree(int *arr, int s, int e, int indx = 1) {
 		// base case

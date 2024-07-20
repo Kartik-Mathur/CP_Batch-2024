@@ -41,8 +41,6 @@ void kosaraju(vector<int> g[], vector<int> rg[], int N) {
 			cout << endl;
 			component++;
 		}
-
-
 	}
 
 }

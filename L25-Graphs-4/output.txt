@@ -1,3 +1,1 @@
-Component 1 : 1 2 3 
-Component 2 : 4 6 5 
-Component 3 : 7 
+15 6

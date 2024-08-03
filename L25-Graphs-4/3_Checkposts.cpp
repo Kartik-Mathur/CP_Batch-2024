@@ -46,7 +46,7 @@ void dfsR(ll src, vector<ll> x[], bool *visited,
 
 void kosaraju(vector<ll> g[], vector<ll> rg[], ll N) {
 	// 1. DFS on normal graph
-	bool visited[100000] = {0};
+	bool visited[100005] = {0};
 
 
 	for (ll i = 1; i <= N; i++) {
@@ -56,7 +56,7 @@ void kosaraju(vector<ll> g[], vector<ll> rg[], ll N) {
 	// We already have it
 
 	// 3. DFS on reverse graph
-	bool reverse_visited[100000] = {0};
+	bool reverse_visited[100005] = {0};
 	ll component = 1;
 	vector<int> ans[N + 1];
 	for (ll i = order.size() - 1 ; i >= 0 ; i--) {
@@ -69,13 +69,6 @@ void kosaraju(vector<ll> g[], vector<ll> rg[], ll N) {
 		}
 	}
 
-	// for (ll i = 1; i < component; i++) {
-	// 	cout << "Component " << i << " : ";
-	// 	for (auto n : ans[i]) {
-	// 		cout << n << " ";
-	// 	}
-	// 	cout  << endl;
-	// }
 
 	vector<pair<ll, ll> > minCost;
 
@@ -90,8 +83,8 @@ void kosaraju(vector<ll> g[], vector<ll> rg[], ll N) {
 			}
 			else if (mi == cost[n]) nodes++;
 		}
-
-		minCost.push_back({mi, nodes});
+		if (mi != 1e15)
+			minCost.push_back({mi, nodes});
 	}
 
 	ll costSum = 0;

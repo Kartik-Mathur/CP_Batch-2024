@@ -36,7 +36,6 @@ public:
 			}
 		}
 	}
-
 };
 
 int main() {
